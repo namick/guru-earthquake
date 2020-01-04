@@ -2,7 +2,7 @@ import mockEarthquakeData from "../../public/mockEarthquakeData";
 import mockSortedEarthquakeData from "../../public/mockSortedEarthquakeData";
 import mockFilteredByAlaskaEarthquakeData from "../../public/mockFilteredByAlaskaEarthquakeData";
 
-import { organizeEarthquakes } from "./index";
+import organizeEarthquakes from "./organizeEarthquakes";
 
 describe("organizeEarthquakes", () => {
   it("Properly sorts the earthquakes by mag and then by time", () => {

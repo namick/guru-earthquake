@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Assignment from "./Assignment";
+import organizeEarthquakes from "./organizeEarthquakes";
 
 /**
  * You will need to implement these two yourself!
@@ -11,28 +12,6 @@ import TableHeader from "./components/TableHeader/TableHeader";
 
 import "./index.scss";
 import "./fonts.scss";
-
-/**
- * This function should take in earthquake data/current search and returns the sorted, filtered, and sliced list per the assignmen
- */
-export function organizeEarthquakes(search, earthquakes) {
-  const filteredEarthquakes = earthquakes.filter(earthquake =>
-    earthquake.place.toLowerCase().includes(search.toLowerCase())
-  );
-
-  return sortByMagnitudeThenTime(filteredEarthquakes).slice(0, 20);
-}
-
-function sortByMagnitudeThenTime(earthquakes) {
-  return earthquakes.sort((a, b) => {
-    if (a.mag === b.mag) {
-      if (new Date(a.time) < new Date(b.time)) return 1;
-      if (new Date(a.time) > new Date(b.time)) return -1;
-      return 0;
-    }
-    return b.mag - a.mag;
-  });
-}
 
 /**
  * Write a hook that fetches the data from our earthquakes endpoint.
