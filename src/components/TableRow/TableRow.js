@@ -11,6 +11,7 @@ export default function TableRow({ id, time, place, mag }) {
       <td>{formatTime(time)}</td>
       <td>{place}</td>
       <td>{mag}</td>
+      <td>[Details]</td>
     </tr>
   );
 }
