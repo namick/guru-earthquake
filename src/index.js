@@ -15,7 +15,16 @@ import "./fonts.scss";
 /**
  * This function should take in earthquake data/current search and returns the sorted, filtered, and sliced list per the assignmen
  */
-export function organizeEarthquakes(search, earthquakes) {}
+export function organizeEarthquakes (search, earthquakes) {
+  return earthquakes.sort((a, b) => {
+    if (a.mag === b.mag) {
+      if (new Date(a.time) < new Date(b.time)) return 1
+      if (new Date(a.time) > new Date(b.time)) return -1
+      return 0
+    }
+    return b.mag - a.mag
+  })
+}
 
 /**
  * Write a hook that fetches the data from our earthquakes endpoint.
@@ -33,10 +42,10 @@ function useEarthquakes() {}
 function EarthquakeApp() {
   return (
     <div className="Earthquakes">
-      {/* 
+      {/*
        Feel free to comment <Assignment> out because it's probably blocking your view.
 
-       If you want to see the assignment  again, just uncomment it! 
+       If you want to see the assignment  again, just uncomment it!
 
        The assignment is always available in README.md.
       */}
