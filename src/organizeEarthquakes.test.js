@@ -1,6 +1,6 @@
-import mockEarthquakeData from "../../public/mockEarthquakeData";
-import mockSortedEarthquakeData from "../../public/mockSortedEarthquakeData";
-import mockFilteredByAlaskaEarthquakeData from "../../public/mockFilteredByAlaskaEarthquakeData";
+import mockEarthquakeData from "./mocks/mockEarthquakeData";
+import mockSortedEarthquakeData from "./mocks/mockSortedEarthquakeData";
+import mockFilteredByAlaskaEarthquakeData from "./mocks/mockFilteredByAlaskaEarthquakeData";
 
 import organizeEarthquakes from "./organizeEarthquakes";
 
