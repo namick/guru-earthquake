@@ -5,7 +5,7 @@ export default function TableRowDetail({ longitude, latitude, hidden }) {
   if (hidden) return null;
 
   return (
-    <tr>
+    <tr className="TableRowDetail">
       <td colSpan="5">
         <span>Longitude: {longitude}</span>
         <span>Latitude: {latitude}</span>

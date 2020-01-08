@@ -1,17 +1,43 @@
-body {
-  align-content: center;
-  background-attachment: fixed;
-  background-image: url("svg/curve.svg");
-  background-position: 0 75vh;
-  background-repeat: no-repeat;
-  display: flex;
-  font-family: ProximaNova;
-  height: 100vh;
-  justify-content: center;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  background-size: contain;
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
+body {
+  display: flex;
+  font-family: ProximaNova;
+  padding: 0;
+  margin: 0;
+  background-color: #eceef3;
+}
 
+.Earthquakes {
+  margin: 36px;
+  height: 1043px;
+  box-shadow: 12px 12px 12px #bab0bf;
+  overflow: hidden;
+
+  table {
+    width: 1798px;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bolder;
+    // Chrome bug with border-colapse prevents hiding borders
+    // Use border-spacing instead
+    // https://stackoverflow.com/questions/42849579/chrome-render-bug-with-border-collapse
+    //border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}

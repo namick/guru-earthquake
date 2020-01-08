@@ -1,0 +1,36 @@
+$textMain: #4a4a4a;
+$textHint: #b5b5b5;
+$border: #dbd5dd;
+$textContrast: #f5f8f9;
+
+.Search {
+  position: relative;
+  margin: 16px 0 64px 36px;
+
+  input {
+    color: $textMain;
+    background-color: $textContrast;
+    border: 2px solid $border;
+    border-radius: 8px;
+    padding: 0 0 1px 0;
+    text-indent: 73px;
+    font-size: 33px;
+    width: 936px;
+    height: 68px;
+  }
+
+  input::placeholder {
+    color: $textHint;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  img {
+    position: absolute;
+    font-size: 36px;
+    top: 12px;
+    left: 16px;
+  }
+}

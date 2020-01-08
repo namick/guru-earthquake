@@ -1,1 +1,93 @@
+$border: #bab0bf;
+$textMain: #4a4a4a;
+$textContrast: #fff;
+$detailPrimary: #2962fe;
+$detailSecondary: #b3d4fb;
 
+.TableRow {
+  td {
+    height: 98px;
+    padding: 16px;
+    color: $textMain;
+    border-left: 2px solid $border;
+    border-bottom: 2px solid $border;
+  }
+
+  td:first-child {
+    width: 284px;
+  }
+
+  td:nth-child(2) {
+    width: 372px;
+  }
+
+  td:nth-last-child(2) {
+    width: 284px;
+  }
+
+  td:last-child {
+    width: 284px;
+    text-align: center;
+  }
+
+  button {
+    cursor: pointer;
+    width: 182px;
+    height: 64px;
+    font-size: 29px;
+    font-weight: 300;
+    position: relative;
+    padding-right: 55px;
+    padding-top: 2px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    border: 2px solid $detailPrimary;
+
+    img {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+    }
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  td.DetailShow {
+    button {
+      color: $detailPrimary;
+      background-color: $textContrast;
+    }
+
+    img {
+      top: 19px;
+    }
+  }
+
+  td.DetailHide {
+    border-bottom-style: hidden;
+    background-color: $detailSecondary;
+    padding-bottom: 18px;
+
+    button {
+      color: $textContrast;
+      background-color: $detailPrimary;
+    }
+  }
+}
+
+.TableRowDetail {
+  td {
+    height: 102px;
+    text-align: center;
+    font-weight: 900;
+    color: $detailPrimary;
+    background-color: $detailSecondary;
+    padding-bottom: 0;
+
+    span {
+      margin: 16px;
+    }
+  }
+}

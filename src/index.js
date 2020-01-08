@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import TableRow from "./components/TableRow/TableRow";
 import TableHeader from "./components/TableHeader/TableHeader";
+import SearchField from "./components/SearchField/SearchField";
 import useOrganizedEarthquakes from "./hooks/useOrganizedEarthquakes";
 
 import "./index.scss";
@@ -16,21 +17,23 @@ function EarthquakeApp() {
     handleChange,
   } = useOrganizedEarthquakes();
 
-  if (loading) return <h2>Loading ...</h2>;
+  if (loading) return <h2>Loading...</h2>;
   if (error) console.log(JSON.stringify(error));
 
   return (
-    <div className="Earthquakes">
-      <input placeholder="Search by Location" onChange={handleChange} />
-      <table>
-        <TableHeader />
-        <tbody>
-          {earthquakes.map(earthquake => (
-            <TableRow key={earthquake.id} {...earthquake} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <SearchField handleChange={handleChange} />
+      <div className="Earthquakes">
+        <table>
+          <TableHeader />
+          <tbody>
+            {earthquakes.map(earthquake => (
+              <TableRow key={earthquake.id} {...earthquake} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

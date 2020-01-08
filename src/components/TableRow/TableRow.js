@@ -2,9 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import Moment from "moment";
 
-import TableRowDetail from './TableRowDetail'
+import TableRowDetail from "./TableRowDetail";
 
+import downIcon from "./down.png";
+import upIcon from "./up.png";
 import "./TableRow.scss";
+
+const useShowDetails = () => {
+  const [hidden, setHidden] = React.useState(true);
+  const handleClick = () => setHidden(toggle => !toggle);
+  const klass = hidden ? "DetailShow" : "DetailHide";
+  const icon = hidden ? downIcon : upIcon;
+
+  return { hidden, handleClick, klass, icon };
+};
+
+const formatTime = time => Moment.utc(time).format("MMMM D, YYYY @ HH:mm");
 
 export default function TableRow({
   id,
@@ -14,8 +27,7 @@ export default function TableRow({
   longitude,
   latitude,
 }) {
-  const [hidden, setHidden] = React.useState(true);
-  const handleClick = () => setHidden(toggle => !toggle);
+  const { hidden, handleClick, klass, icon } = useShowDetails();
 
   return (
     <>
@@ -24,11 +36,18 @@ export default function TableRow({
         <td>{formatTime(time)}</td>
         <td>{place}</td>
         <td>{mag}</td>
-        <td>
-          <button onClick={handleClick}>Details</button>
+        <td className={klass}>
+          <button onClick={handleClick}>
+            Details
+            <img src={icon} alt="" />
+          </button>
         </td>
       </tr>
-      <TableRowDetail longitude={longitude} latitude={latitude} hidden={hidden} />
+      <TableRowDetail
+        longitude={longitude}
+        latitude={latitude}
+        hidden={hidden}
+      />
     </>
   );
 }
@@ -50,7 +69,3 @@ TableRow.defaultProps = {
   longitude: 0,
   latitude: 0,
 };
-
-function formatTime(time) {
-  return Moment.utc(time).format("MMMM DD, YYYY @ HH:mm");
-}
