@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.com/namick/guru-earthquake.svg?branch=master)](https://travis-ci.com/namick/guru-earthquake)
+
+### Note: This is completed and hosted here: https://guru-earthquakes.web.app/
+
+-----
+
 ## Guru Frontend Test
 
 Congratulations on making it to this stage! 🎉
